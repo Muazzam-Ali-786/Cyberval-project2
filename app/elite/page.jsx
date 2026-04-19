@@ -12,8 +12,8 @@ export default function ElitePage() {
             {/* Left Column */}
             <div className="elite-left">
               <span className="elite-badge">ELITE SECURITY</span>
-              <h2 className="elite-title" style={{ whiteSpace: "nowrap" }}>
-                Why Choose Cybervol?<br />
+              <h2 className="elite-title">
+                <span className="title-nowrap">Why Choose Cybervol?</span><br />
                 Trusted Cybersecurity
               </h2>
               <p className="elite-description">

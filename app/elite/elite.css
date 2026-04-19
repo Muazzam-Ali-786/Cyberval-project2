@@ -59,6 +59,10 @@
   letter-spacing: -0.5px;
 }
 
+.title-nowrap {
+  white-space: nowrap;
+}
+
 .elite-description {
   font-family: var(--font-manrope), sans-serif;
   font-size: 15px;
