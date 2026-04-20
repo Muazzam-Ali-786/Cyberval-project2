@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import "./nav.css"
 
 export default function Nav() {
+    const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -15,12 +17,13 @@ export default function Nav() {
     };
 
     const toggleDropdown = (e, name) => {
-      
         if (window.innerWidth <= 768) {
             e.preventDefault();
             setActiveDropdown(activeDropdown === name ? null : name);
         }
     };
+
+    const isActive = (path) => pathname === path;
 
     return (
         <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''}`}>
@@ -33,16 +36,10 @@ export default function Nav() {
                     </div>
                 </div>
 
-                <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                    <li><Link href="/" className="active" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-                    <li><Link href="/About" onClick={() => setIsMenuOpen(false)}>About us</Link></li>
-                    <li className={`dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>
+                    <li><Link href="/" className={isActive('/') ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+                    <li><Link href="/about" className={isActive('/about') ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>About us</Link></li>
+                    <li className={`dropdown ${activeDropdown === 'services' || isActive('/services') ? 'active' : ''}`}>
                         <Link href="/" onClick={(e) => toggleDropdown(e, 'services')}>Services <span className="arrow">▾</span></Link>
                         <div className="mega-menu">
                             <div className="mega-left">
@@ -195,8 +192,15 @@ export default function Nav() {
                     </li>
                 </ul>
 
-                <div className="nav-cta">
-                    <button className="contact-btn">Contact us</button>
+                <div className="nav-right">
+                    <div className="nav-cta">
+                        <button className="contact-btn">Contact us</button>
+                    </div>
+                    <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </nav>

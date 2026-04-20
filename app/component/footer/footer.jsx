@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./footer.css";
 
 export default function Footer() {
@@ -54,7 +55,7 @@ export default function Footer() {
         <div className="footer-col">
           <h3 className="footer-heading">Company</h3>
           <ul className="footer-links">
-            <li><a href="#">About us</a></li>
+            <li><Link href="/about">About us</Link></li>
             <li><a href="#">Career</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Webinars</a></li>

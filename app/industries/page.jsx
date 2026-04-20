@@ -63,7 +63,7 @@ export default function Industries() {
       left: target,
       behavior: 'smooth'
     });
-    setActiveDot(index); // Note: activeIndex is derived from scroll, but setting it here for instant feedback
+    setActiveIndex(index); // Corrected from setActiveDot to setActiveIndex
   };
 
   return (
@@ -87,8 +87,12 @@ export default function Industries() {
             ref={scrollRef}
             onScroll={handleScroll}
           >
-            {industryCards.map((card) => (
-              <div key={card.id} className="industry-card-wrapper">
+            {industryCards.map((card, index) => (
+              <div 
+                key={card.id} 
+                className="industry-card-wrapper"
+                onMouseEnter={() => setActiveIndex(index)}
+              >
                 <div className="industry-card">
                   <div className="industry-card-image-area">
                     <div className="industry-image-wrapper">
@@ -122,7 +126,7 @@ export default function Industries() {
             ))}
             <div 
               className="indicator-active-thumb" 
-              style={{ left: `${(activeIndex / (industryCards.length - 1)) * 75}%` }}
+              style={{ left: `${(activeIndex / (industryCards.length)) * 100}%` }}
             ></div>
           </div>
         </div>

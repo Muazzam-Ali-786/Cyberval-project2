@@ -6,45 +6,60 @@ import './services.css';
 export default function ServicesPage() {
   const scrollRef = useRef(null);
   const [activeDot, setActiveDot] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const serviceCards = [
     {
       id: 1,
       title: "CyberShield Solutions",
       desc: "Building Secure & Resilient IT Infrastructures",
-      image: "image-1.svg"
+      image: "/images/pages/services/card-image-1.png",
+      defaultIcon: "/images/pages/services/icon-navy-blue.svg",
+      hoverIcon: "/images/pages/services/icon-white (1).svg"
     },
     {
       id: 2,
       title: "Governance, Risk & Compliance (GRC)",
       desc: "Aligning Cybersecurity with Business Risk and Regulatory Assurance",
-      image: "image-2.svg"
+      image: "/images/pages/services/card-image-2.png",
+      defaultIcon: "/images/pages/services/icon-navy-blue.svg",
+      hoverIcon: "/images/pages/services/icon-white (1).svg"
     },
     {
       id: 3,
       title: "Offensive Security",
       desc: "Proactive Threat Simulation & Risk Mitigation",
-      image: "image-3.svg"
+      image: "/images/pages/services/card-image-3.png",
+      defaultIcon: "/images/pages/services/icon-navy-blue.svg",
+      hoverIcon: "/images/pages/services/icon-white (1).svg"
     },
     {
       id: 4,
       title: "Awareness & Training",
       desc: "Empower Your People, Strengthen Your First Defense",
-      image: "image-4.svg"
+      image: "/images/pages/services/card-image-4 .png",
+      defaultIcon: "/images/pages/services/icon-navy-blue.svg",
+      hoverIcon: "/images/pages/services/icon-white (1).svg"
     },
     {
       id: 5,
       title: "Training & Certifications",
-      desc: "Cybersecurity, Ai & Digital Transformation, Resilience, GRC, and Privacy",
-      image: "image-5.svg"
+      desc:"Cybersecurity, Al & Digital Transformation, Resilience, GRC, and Privacy",
+      image: "/images/pages/services/card-image-5.png",
+      defaultIcon: "/images/pages/services/icon-navy-blue.svg",
+      hoverIcon: "/images/pages/services/icon-white (1).svg"
     },
     {
       id: 6,
       title: "Managed Cybersecurity as a Service (MCaaS)",
       desc: "Your Unyielding Cybersecurity Ally in the Digital Realm",
-      image: "image-6.svg"
+      image: "/images/pages/services/card-image-6.png",
+      defaultIcon: "/images/pages/services/icon-navy-blue.svg",
+      hoverIcon: "/images/pages/services/icon-white (1).svg"
     }
   ];
+
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
@@ -53,9 +68,11 @@ export default function ServicesPage() {
     if (scrollWidth <= clientWidth) return;
     
     const maxScroll = scrollWidth - clientWidth;
-    const progress = scrollLeft / maxScroll;
+    const progress = (scrollLeft / maxScroll) * 100;
+    setScrollProgress(progress);
     
-    const currentDot = Math.round(progress * 2);
+    // Also update activeDot for the indicators if needed
+    const currentDot = Math.round((scrollLeft / maxScroll) * (serviceCards.length - 1));
     setActiveDot(currentDot);
   };
 
@@ -64,7 +81,7 @@ export default function ServicesPage() {
     const { scrollWidth, clientWidth } = scrollRef.current;
     
     const maxScroll = scrollWidth - clientWidth;
-    const scrollTarget = (maxScroll / 2) * index;
+    const scrollTarget = (maxScroll / (serviceCards.length - 1)) * index;
     
     scrollRef.current.scrollTo({
       left: scrollTarget,
@@ -100,24 +117,32 @@ export default function ServicesPage() {
               onScroll={handleScroll}
             >
               
-              {serviceCards.map((card) => (
-                <div className="service-card" key={card.id}>
+              {serviceCards.map((card, index) => (
+                <div 
+                  className={`service-card ${hoveredIndex === index ? 'card-hovered' : ''}`}
+                  key={card.id}
+                  onMouseEnter={() => {
+                    setHoveredIndex(index);
+                    setActiveDot(index);
+                  }}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                   <div 
                     className="card-hover-bg" 
-                    style={{ backgroundImage: `url('/images/pages/${card.image}')` }}
+                    style={{ backgroundImage: `url('${card.image}')` }}
                   ></div>
-                  
-                  <a href="#" className="svg-btn-click-area" aria-label={`Read more about ${card.title}`}></a>
-                  
+                                    
                   <div className="card-content">
                     <h3 className="card-title">{card.title}</h3>
                     <div className="card-line"></div>
                     <p className="card-text">{card.desc}</p>
                     
                     <button className="card-btn" aria-label={`Learn more about ${card.title}`}>
-                      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 13L13 1M13 1H4M13 1V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                      <img 
+                        src={hoveredIndex === index ? card.hoverIcon : card.defaultIcon} 
+                        alt="Arrow Icon" 
+                        className="card-btn-icon"
+                      />
                     </button>
                   </div>
                 </div>
@@ -125,14 +150,23 @@ export default function ServicesPage() {
 
             </div>
             
-            <div className="slider-dots">
-              {[0, 1, 2].map((index) => (
-                <span 
-                  key={index} 
-                  className={`dot ${activeDot === index ? 'active' : ''}`}
-                  onClick={() => scrollToDot(index)}
-                ></span>
-              ))}
+            <div className="services-dots">
+              <div className="slider-indicator-bar">
+                {serviceCards.map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="indicator-segment"
+                    onClick={() => scrollToDot(i)}
+                  ></div>
+                ))}
+                <div 
+                  className="indicator-active-thumb" 
+                  style={{ 
+                    left: `${scrollProgress * 0.8}%`, /* Adjusting 100% - width% to stay inside the bar */
+                    width: `20%` 
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
         </div>

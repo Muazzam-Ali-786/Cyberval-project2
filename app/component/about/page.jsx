@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './about.css'
 
 export default function AboutPage() {
@@ -42,7 +43,7 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <button className="btn-read-more">Read More</button>
+            <Link href="/about"><button className="btn-read-more">Read More</button></Link>
           </div>
         </div>
       </section>

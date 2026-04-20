@@ -2,38 +2,34 @@ import "./hero.css"
 
 export default function Hero() {
     return(
-        <section className="hero">
-            <div className="hero-background-effects">
-                <div className="light-beam lb-1"></div>
-                <div className="light-beam lb-2"></div>
-                <div className="light-beam lb-3"></div>
-                <div className="spotlight"></div>
-            </div>
+        <section className="home-hero">
+            {/* The background-effects container is now simplified as aboutBg.svg handles the visuals */}
+            <div className="home-hero-bg-overlay"></div>
             
-            <div className="hero-container">
-                <div className="hero-content">
-                    <div className="hero-pill-wrapper">
-                        <span className="hero-pill">TRANSFORMING RISK INTO RESILIENT GROWTH</span>
+            <div className="home-hero-container">
+                <div className="home-hero-content">
+                    <div className="home-hero-pill-wrapper">
+                        <span className="home-hero-pill">TRANSFORMING RISK INTO RESILIENT GROWTH</span>
                     </div>
                     
-                    <h1 className="hero-title">
+                    <h1 className="home-hero-title">
                         Cybersecurity & Risk <br />
                         Transformation Strategy Company
                     </h1>
                     
-                    <p className="hero-description">
+                    <p className="home-hero-description">
                         Welcome to Cybervol, where expertise drives innovation and <br />
                         efficiency. We provide tailored solutions to protect your digital <br />
                         assets and boost security.
                     </p>
                     
-                    <div className="hero-actions">
-                        <button className="primary-btn">Schedule a Free Consultation</button>
-                        <button className="secondary-btn">Learn More</button>
+                    <div className="home-hero-actions">
+                        <button className="home-hero-primary-btn">Schedule a Free Consultation</button>
+                        <button className="home-hero-secondary-btn">Learn More</button>
                     </div>
                 </div>
                 
-                <div className="hero-image">
+                <div className="home-hero-image">
                     <img src="/images/header-items/hero/earth.png" alt="Earth Globe" />
                 </div>
             </div>
