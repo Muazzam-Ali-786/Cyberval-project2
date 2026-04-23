@@ -11,20 +11,21 @@ export default function Credentials() {
             <div className="credentials-badge-wrapper">
               <span className="credentials-badge">CERTIFIED EXCELLENCE</span>
             </div>
-            
+
             <h2 className="credentials-title">
-              Trusted Credentials That <br className="desktop-br" />
-              <span className="highlight">Validate Our Expertise</span>
+              <span className="highlight">Trusted Credentials</span> That <br />
+              Validate Our Expertise
             </h2>
-            
+
             <p className="credentials-subtitle">
               Our team has global certifications, guaranteeing top cybersecurity standards and excellent data protection.
             </p>
 
             <div className="company-cert-wrapper">
-              <span className="company-cert-label">COMPANY CERTIFICATION</span>
+              
               <div className="credentials-left-visual">
-                <img src="/images/pages/left-colun.svg" alt="Company Certifications" className="credentials-svg" />
+                <img src="/images/pages/left-colun.svg" alt="Company Certifications" className="credentials-svg desktop-visual" />
+                <img src="/cards5.svg" alt="Company Certifications Mobile" className="credentials-svg mobile-visual" />
               </div>
             </div>
           </div>

@@ -78,17 +78,28 @@ export default function Industries() {
 
   const scrollToDot = (index) => {
     if (!scrollRef.current) return;
-    const { scrollWidth, clientWidth } = scrollRef.current;
-    const maxScroll = scrollWidth - clientWidth;
     
-    // Target scroll position for the dot
-    const target = (maxScroll / (industryCards.length - 1)) * index;
+    const { scrollWidth, clientWidth } = scrollRef.current;
+    const isMobile = window.innerWidth <= 425;
+    
+    let target = 0;
+    
+    if (isMobile) {
+      target = index * clientWidth;
+    } else {
+      const cardWidthWithGap = 414;
+      if (index === 0) target = 0;
+      else if (index === 1) target = cardWidthWithGap;
+      else if (index >= 2) {
+        target = scrollWidth - clientWidth;
+      }
+    }
     
     scrollRef.current.scrollTo({
       left: target,
       behavior: 'smooth'
     });
-    setActiveIndex(index); // Corrected from setActiveDot to setActiveIndex
+    setActiveIndex(index);
   };
 
   return (
@@ -96,7 +107,7 @@ export default function Industries() {
       <div className="industries-container">
         <div className="industries-header">
           <div className="industries-header-left">
-            <span className="industries-badge">INDUSTRIES</span>
+            <span className="industries-badge">industries</span>
             <h2 className="industries-title">Industries we serve</h2>
           </div>
           <div className="industries-header-right">
@@ -142,17 +153,24 @@ export default function Industries() {
 
         <div className="industries-dots">
           <div className="slider-indicator-bar">
-            {industryCards.map((_, i) => (
-              <div 
-                key={i} 
-                className="indicator-segment"
-                onClick={() => scrollToDot(i)}
-              ></div>
-            ))}
-            <div 
-              className="indicator-active-thumb" 
-              style={{ left: `${(activeIndex / (industryCards.length)) * 100}%` }}
-            ></div>
+            {[0, 1, 2].map((i) => {
+              // Map 4 cards to 3 tabs:
+              // index 0 -> Card 1
+              // index 1 -> Card 2
+              // index 2 -> Card 3 & 4
+              let isActive = false;
+              if (i === 0) isActive = activeIndex === 0;
+              else if (i === 1) isActive = activeIndex === 1;
+              else if (i === 2) isActive = activeIndex >= 2;
+
+              return (
+                <div 
+                  key={i} 
+                  className={`indicator-segment ${isActive ? 'active' : ''}`}
+                  onClick={() => scrollToDot(i)}
+                ></div>
+              );
+            })}
           </div>
         </div>
       </div>

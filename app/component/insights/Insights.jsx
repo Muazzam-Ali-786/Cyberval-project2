@@ -137,19 +137,36 @@ export default function Insights() {
           </div>
         </div>
 
-        {isScrollable && (
-          <div className="insights-indicators">
-            <div className="slider-indicator-bar">
-               <div 
-                  className="indicator-active-thumb" 
-                  style={{ 
-                    left: `${scrollProgress * (1 - (44 / 180))}%`,
-                    width: `44px` 
+        <div className="insights-dots">
+          <div className="slider-indicator-bar">
+            {[0, 1, 2].map((i) => {
+              // Map progress to 3 tabs
+              const isActive = 
+                (i === 0 && scrollProgress < 33) ||
+                (i === 1 && scrollProgress >= 33 && scrollProgress < 66) ||
+                (i === 2 && scrollProgress >= 66);
+
+              return (
+                <div 
+                  key={i} 
+                  className={`indicator-segment ${isActive ? 'active' : ''}`}
+                  onClick={() => {
+                    if (scrollRef.current) {
+                      const { scrollWidth, clientWidth } = scrollRef.current;
+                      const maxScroll = scrollWidth - clientWidth;
+                      scrollRef.current.scrollTo({
+                        left: (i / 2) * maxScroll,
+                        behavior: 'smooth'
+                      });
+                    }
                   }}
                 ></div>
-            </div>
+              );
+            })}
           </div>
-        )}
+        </div>
+
+
       </div>
     </section>
   );

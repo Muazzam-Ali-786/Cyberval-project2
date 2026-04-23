@@ -1,4 +1,3 @@
-import Link from "next/link";
 import "./footer.css";
 
 export default function Footer() {
@@ -7,16 +6,6 @@ export default function Footer() {
       <div className="footer-main-wrapper">
         <div className="footer-container">
       
-      <div className="footer-cta-banner">
-        <div className="footer-cta-content">
-          <h2 className="footer-cta-title">Ready to Secure Your Business?</h2>
-          <p className="footer-cta-desc">
-            Protect your digital assets with expert-driven cybersecurity
-            solutions <br /> tailored to your needs.
-          </p>
-        </div>
-        <button className="footer-cta-btn">Talk to Our Experts</button>
-      </div>
 
    
       <div className="footer-content">
@@ -55,7 +44,7 @@ export default function Footer() {
         <div className="footer-col">
           <h3 className="footer-heading">Company</h3>
           <ul className="footer-links">
-            <li><Link href="/about">About us</Link></li>
+            <li><a href="#">About us</a></li>
             <li><a href="#">Career</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Webinars</a></li>

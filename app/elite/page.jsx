@@ -27,7 +27,42 @@ export default function ElitePage() {
 
             {/* Right Column */}
             <div className="elite-right">
+              {/* Desktop version still shows the SVG if preferred, or we can use cards for all */}
               <img src="/images/pages/elite/right-colun.svg" alt="Elite Security Features" className="features-svg" />
+              
+              {/* Mobile Features Cards (Visible on 480px and below) */}
+              <div className="elite-features-mobile">
+                {[
+                  {
+                    id: 1,
+                    title: "Unrivaled Commitment",
+                    desc: "Protecting your digital assets with relentless dedication and cutting-edge cybersecurity solutions."
+                  },
+                  {
+                    id: 2,
+                    title: "Strategic Partnership",
+                    desc: "Acting as your trusted advisor, guiding your organization toward secure and sustainable growth."
+                  },
+                  {
+                    id: 3,
+                    title: "Tailored Solutions",
+                    desc: "Customized cybersecurity strategies designed to meet your unique challenges and deliver measurable results."
+                  },
+                  {
+                    id: 4,
+                    title: "Trusted Expertise",
+                    desc: "Years of experience and industry knowledge to safeguard your operations with confidence."
+                  }
+                ].map((feature) => (
+                  <div key={feature.id} className="elite-feature-card">
+                    <div className="feature-icon-num">{feature.id}</div>
+                    <div className="feature-text">
+                      <h4 className="feature-title">{feature.title}</h4>
+                      <p className="feature-desc">{feature.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 

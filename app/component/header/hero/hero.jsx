@@ -13,26 +13,25 @@ export default function Hero() {
                     </div>
                     
                     <h1 className="home-hero-title">
-                        Cybersecurity & Risk <br />
-                        Transformation Strategy Company
+                        Cybersecurity & Risk Transformation Strategy Company
                     </h1>
                     
                     <p className="home-hero-description">
-                        Welcome to Cybervol, where expertise drives innovation and <br />
-                        efficiency. We provide tailored solutions to protect your digital <br />
+                        Welcome to Cybervol, where expertise drives innovation and 
+                        efficiency. We provide tailored solutions to protect your digital 
                         assets and boost security.
                     </p>
                     
-                    <div className="home-hero-actions">
-                        <button className="home-hero-primary-btn">Schedule a Free Consultation</button>
-                        <button className="home-hero-secondary-btn">Learn More</button>
-                    </div>
-                </div>
-                
-                <div className="home-hero-image">
-                    <img src="/images/header-items/hero/earth.png" alt="Earth Globe" />
+                <div className="home-hero-actions">
+                    <button className="home-hero-primary-btn">Schedule a Free Consultation</button>
+                    <button className="home-hero-secondary-btn">Learn More</button>
                 </div>
             </div>
+        </div>
+        
+        <div className="home-hero-image">
+            <img src="/1761bd936657d48867f66d0e2e338b4c010c4807-ezgif.com-gif-maker.gif" alt="Earth Globe" />
+        </div>
 
             <div className="hero-partners">
                 <p className="partners-title">Technology Partners</p>

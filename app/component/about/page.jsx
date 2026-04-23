@@ -83,13 +83,36 @@ export default function AboutPage() {
           Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.
         </p>
         
-        {/* Using exact SVG from Figma for commitment cards */}
-        <div className="cards-svg-wrapper">
-          <img 
-            src="/images/commitment-cards.svg" 
-            alt="Our Commitment Features" 
-            className="cards-image"
-          />
+        <div className="commitment-cards-container">
+          <div className="commitment-card">
+            <div className="card-icon-wrapper">
+              <img src="/group1.svg" alt="Security First" />
+            </div>
+            <div className="card-content">
+              <h4 className="card-title">Security First</h4>
+              <p className="card-desc">Ensuring unwavering security at every level for robust digital asset protection.</p>
+            </div>
+          </div>
+
+          <div className="commitment-card">
+            <div className="card-icon-wrapper">
+              <img src="/group2.svg" alt="Client Confidentiality" />
+            </div>
+            <div className="card-content">
+              <h4 className="card-title">Client Confidentiality</h4>
+              <p className="card-desc">Upholding strict confidentiality standards for trusted cybersecurity services.</p>
+            </div>
+          </div>
+
+          <div className="commitment-card">
+            <div className="card-icon-wrapper">
+              <img src="/group3.svg" alt="Continuous Innovation" />
+            </div>
+            <div className="card-content">
+              <h4 className="card-title">Continuous Innovation</h4>
+              <p className="card-desc">Staying ahead with cutting-edge solutions to adapt and counter evolving threats.</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

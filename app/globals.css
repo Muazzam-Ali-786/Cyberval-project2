@@ -52,3 +52,72 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* Home Page Footer CTA */
+/* Home Page Footer CTA */
+.footer-cta-banner {
+  width: 1230px;
+  max-width: 90%;
+  height: 380px;
+  background-image: url('/images/Footer/footer-cta-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0b1b33;
+  opacity: 1;
+  border-radius: 8px;
+  position: relative;
+  margin: 0 auto;
+  transform: translateY(100px); /* Shifts it down slightly to bridge with footer */
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1300px) {
+  .footer-cta-banner {
+    width: 90%;
+  }
+}
+
+.footer-cta-content {
+  margin-bottom: 30px;
+}
+
+.footer-cta-title {
+  font-family: var(--font-sora), sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 15px 0;
+}
+
+.footer-cta-desc {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-cta-btn {
+  background: #111111;
+  color: #ffffff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-cta-btn:hover {
+  background: #333333;
+}

@@ -176,7 +176,7 @@ html {
 
 .mega-heading {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 600;
     color: #2E5A88;
     letter-spacing: 1.5px;
     margin: 0 0 10px 0;
@@ -218,7 +218,7 @@ html {
 .mega-item-text h4 {
     margin: 0;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     color: #111;
     line-height: 1.2;
     transition: color 0.2s ease;

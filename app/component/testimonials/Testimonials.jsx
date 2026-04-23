@@ -28,47 +28,72 @@ const testimonialData = [
     text: "Cybervol transformed our security infrastructure completely. Their proactive approach and deep expertise helped us identify vulnerabilities before they became threats. We now operate with full confidence knowing our systems are protected.",
     rating: 5
   },
- 
-
+  {
+    id: 4,
+    name: "Sarah",
+    designation: "CTO",
+    image: "/images/pages/john.jpg",
+    text: "Cybervol transformed our security infrastructure completely. Their proactive approach and deep expertise helped us identify vulnerabilities before they became threats. We now operate with full confidence knowing our systems are protected.",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: "David",
+    designation: "SECURITY ANALYST",
+    image: "/images/pages/melisa.jpg",
+    text: "Cybervol transformed our security infrastructure completely. Their proactive approach and deep expertise helped us identify vulnerabilities before they became threats. We now operate with full confidence knowing our systems are protected.",
+    rating: 5
+  },
+  {
+    id: 6,
+    name: "Elena",
+    designation: "COMPLIANCE OFFICER",
+    image: "/images/pages/charlie.jpg",
+    text: "Cybervol transformed our security infrastructure completely. Their proactive approach and deep expertise helped us identify vulnerabilities before they became threats. We now operate with full confidence knowing our systems are protected.",
+    rating: 5
+  }
 ];
 
 export default function Testimonials() {
   const scrollRef = useRef(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isScrollable, setIsScrollable] = useState(false);
-
-  const checkScrollable = () => {
-    if (scrollRef.current) {
-      const { scrollWidth, clientWidth } = scrollRef.current;
-      setIsScrollable(scrollWidth > clientWidth);
-    }
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    
     if (scrollWidth <= clientWidth) return;
     
+    // We have 3 dots, each corresponding to a segment of the scroll area
     const maxScroll = scrollWidth - clientWidth;
-    const progress = (scrollLeft / maxScroll) * 100;
-    setScrollProgress(progress);
+    const progress = scrollLeft / maxScroll;
+    
+    if (progress < 0.33) {
+      setActiveIndex(0);
+    } else if (progress < 0.66) {
+      setActiveIndex(1);
+    } else {
+      setActiveIndex(2);
+    }
   };
 
-  useEffect(() => {
-    checkScrollable();
-    window.addEventListener('resize', checkScrollable);
-    
+  useEffect(() => {    
     const el = scrollRef.current;
     if (!el) return;
 
     const handleWheel = (e) => {
-      if (e.deltaY !== 0) {
+      // Allow vertical scrolling naturally
+      // Only capture if deltaX is zero but we want to convert deltaY to deltaX?
+      // Actually standard scroll-snap handles horizontal trackpads nicely.
+      // If we want wheel to scroll horizontally:
+      if (e.deltaY !== 0 && e.shiftKey === false) {
+        // Find if we are fully scrolled horizontally
         const isAtStart = el.scrollLeft <= 0 && e.deltaY < 0;
-        const isAtEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth && e.deltaY > 0;
+        const isAtEnd = Math.ceil(el.scrollLeft) >= el.scrollWidth - el.clientWidth && e.deltaY > 0;
         
         if (!isAtStart && !isAtEnd) {
           e.preventDefault();
-          el.scrollLeft += e.deltaY;
+          el.scrollBy({ left: e.deltaY * 3, behavior: 'smooth' });
         }
       }
     };
@@ -76,18 +101,24 @@ export default function Testimonials() {
     el.addEventListener('wheel', handleWheel, { passive: false });
     return () => {
       el.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('resize', checkScrollable);
     };
   }, []);
 
-  const scrollToPercent = (percent) => {
+  const scrollToDot = (dotIndex) => {
     if (!scrollRef.current) return;
     const { scrollWidth, clientWidth } = scrollRef.current;
-    const maxScroll = scrollWidth - clientWidth;
-    scrollRef.current.scrollTo({
-      left: (maxScroll * percent) / 100,
-      behavior: 'smooth'
-    });
+    
+    if (scrollWidth > clientWidth) {
+      const maxScroll = scrollWidth - clientWidth;
+      // dotIndex: 0 => 0%, 1 => 50%, 2 => 100%
+      const targetScroll = (maxScroll * (dotIndex / 2));
+      
+      scrollRef.current.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+      setActiveIndex(dotIndex);
+    }
   };
 
   return (
@@ -135,19 +166,22 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {isScrollable && (
-          <div className="testimonials-indicators">
-            <div className="slider-indicator-bar">
-               <div 
-                  className="indicator-active-thumb" 
-                  style={{ 
-                    left: `${scrollProgress * (1 - (44 / 180))}%`,
-                    width: `44px` 
-                  }}
-                ></div>
-            </div>
-          </div>
-        )}
+        <div className="testimonials-indicators" style={{ position: 'relative', zIndex: 50 }}>
+          {[0, 1, 2].map((dot) => {
+            return (
+              <button 
+                key={dot} 
+                className={`testimonial-dot ${activeIndex === dot ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToDot(dot);
+                }}
+                aria-label={`Go to slide ${dot + 1}`}
+                style={{ border: 'none', padding: 0 }}
+              ></button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

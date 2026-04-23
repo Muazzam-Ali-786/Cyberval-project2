@@ -65,7 +65,7 @@
 .about-title {
   font-family: var(--font-sora), sans-serif;
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1a1a1a;
   line-height: 1.35;
   margin: 0 0 20px 0;
@@ -91,7 +91,7 @@
 .mission-heading {
   font-family: var(--font-sora), sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: #3b659c;
   margin: 0 0 10px 0;
 }
@@ -99,7 +99,7 @@
 .mission-subheading {
   font-family: var(--font-sora), sans-serif;
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1a1a1a;
   margin: 0 0 8px 0;
 }
@@ -225,7 +225,7 @@
 .commitment-heading {
   font-family: var(--font-sora), sans-serif;
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 600;
   color: #1a1a1a;
   margin: 0 0 12px 0;
 }
@@ -241,18 +241,126 @@
   margin: 0 0 60px 0;
 }
 
-/* Cards SVG wrapper */
-.cards-svg-wrapper {
+/* Commitment Cards Container */
+.commitment-cards-container {
   display: flex;
   justify-content: center;
+  gap: 20px;
   width: 100%;
+  margin-top: 60px;
+  flex-wrap: nowrap;
 }
 
-.cards-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.commitment-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 356px;
+  width: 356px;
+  height: 414px;
+  min-width: 0;
+  background: #F6F8FB;
+  border-radius: 8px;
+  padding: 15px 30px 30px 30px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
+
+.commitment-card:nth-child(1) .card-icon-wrapper {
+  height: 220px;
+}
+
+.commitment-card:nth-child(1) .card-icon-wrapper img {
+  max-width: 126%;
+  max-height: 234px;
+}
+
+.commitment-card:nth-child(2) {
+  flex: 0 0 478px;
+  width: 478px;
+}
+
+.commitment-card:nth-child(2) .card-icon-wrapper {
+  height: 260px;
+}
+
+.commitment-card:nth-child(2) .card-icon-wrapper img {
+  max-width: 142%;
+  max-height: 260px;
+}
+
+.commitment-card:nth-child(3) .card-icon-wrapper {
+  height: 220px;
+  padding-top: 50px;
+}
+
+.commitment-card:nth-child(3) .card-icon-wrapper img {
+  max-width: 233%;
+  max-height: 270px;
+}
+
+.commitment-card:hover {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transform: translateY(-5px);
+}
+
+.card-icon-wrapper {
+  width: 100%;
+  height: 120px;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon-wrapper img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.card-content {
+  padding: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-title {
+  font-family: var(--font-sora), sans-serif;
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.card-desc {
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 14px;
+  color: #585858;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .commitment-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .commitment-card {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+
 
 /* ===== Responsive Styles ===== */
 @media (max-width: 1200px) {
@@ -272,7 +380,7 @@
   }
   .about-hero-right {
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
   .mission-block { text-align: left; }
   .about-badge {
@@ -295,29 +403,179 @@
   .commitment-section { padding: 50px 30px; }
   .about-title { font-size: 28px; }
   .radar-wrapper { width: 100%; max-width: 350px; }
+
 }
 
 @media (max-width: 480px) {
-  .stat-value {
-    font-size: 30px;
-    justify-content: center;
-    text-align: center;
+  .about-hero {
+    padding: 60px 20px 60px 30px; /* 30px left padding */
   }
-  .stat-unit {
+  .about-hero-container {
+    align-items: flex-start;
+  }
+  .about-title {
+    font-family: var(--font-sora), sans-serif;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 43px !important;
+    color: #212121 !important;
+    text-align: left;
+  }
+  .hero-title-blue {
+    color: #2E5A88 !important;
+  }
+  .about-description {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 30px !important;
+    color: #585858 !important;
+    text-align: left;
+    margin-top: 20px;
+  }
+  .mission-block {
+    text-align: left;
+    margin-top: 30px;
+  }
+  .mission-heading {
+    font-family: var(--font-sora), sans-serif;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 47px !important;
+    color: #2E5A88 !important;
+    margin-bottom: 8px;
+    align-self: stretch;
+  }
+  .mission-subheading {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 30px !important;
+    color: #212121 !important;
+    margin-bottom: 12px;
+  }
+  .mission-description {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 30px !important;
+    color: #585858 !important;
+  }
+  .btn-read-more {
+    width: auto !important; /* Allow padding to define width */
+    height: 48px !important;
+    padding: 13px 47px !important;
+    border-radius: 8px !important;
+    border: 1px solid #000F2E !important;
+    background: transparent;
+    color: #212121;
+    font-family: var(--font-manrope), sans-serif;
     font-size: 16px;
+    font-weight: 600;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .stat-value {
+    font-family: var(--font-sora), sans-serif;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 122.5% !important;
+    color: #0F0F0F !important;
+    justify-content: flex-start;
+    text-align: left;
+    height: 36px;
+    align-self: stretch;
   }
   .stat-label {
-    font-size: 14px;
-    text-align: center;
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 133% !important;
+    color: #585858 !important;
+    text-align: left;
+    white-space: nowrap !important; /* Force single line */
+    height: auto;
+    align-self: stretch;
   }
   .stat-box {
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px 0;
   }
   .stats-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 40px 30px;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
   }
+  /* Adding grid lines - accounting for hidden dividers in nth-child */
+  .stat-box:nth-child(1), .stat-box:nth-child(3) {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .stat-box:nth-child(1), .stat-box:nth-child(5) {
+    padding-right: 20px;
+    border-right: 1px solid #e5e7eb;
+  }
+  .stat-box:nth-child(3), .stat-box:nth-child(7) {
+    padding-left: 20px;
+  }
+
+  /* ===== Commitment Section Mobile ===== */
+  .commitment-section {
+    padding: 60px 30px;
+    text-align: center;
+  }
+  .commitment-label {
+    padding: 8px 24px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    margin-bottom: 24px;
+  }
+  .commitment-heading {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .commitment-subtext {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    max-width: 320px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+
+  /* Reset commitment cards for mobile */
+  .commitment-card, 
+  .commitment-card:nth-child(2) {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: 400px !important;
+    flex: 0 0 auto !important;
+    padding: 20px !important;
+  }
+
+  .card-icon-wrapper,
+  .commitment-card:nth-child(1) .card-icon-wrapper,
+  .commitment-card:nth-child(2) .card-icon-wrapper,
+  .commitment-card:nth-child(3) .card-icon-wrapper {
+    height: 160px !important;
+    padding-top: 0 !important;
+    margin-bottom: 15px !important;
+  }
+
+  .card-icon-wrapper img,
+  .commitment-card:nth-child(1) .card-icon-wrapper img,
+  .commitment-card:nth-child(2) .card-icon-wrapper img,
+  .commitment-card:nth-child(3) .card-icon-wrapper img {
+    max-height: 160px !important;
+    max-width: 100% !important;
+    width: auto !important;
+  }
+
 }
