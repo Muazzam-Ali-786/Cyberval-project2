@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./footer.css";
 
 export default function Footer() {
@@ -26,30 +27,30 @@ export default function Footer() {
           </p>
 
           <div className="social-links">
-            <a href="#" className="soc-link">
+            <Link href="#" className="soc-link">
               <img src="/images/Footer/icons-logo/icon-1.svg" alt="Facebook" />
-            </a>
-            <a href="#" className="soc-link">
+            </Link>
+            <Link href="#" className="soc-link">
               <img src="/images/Footer/icons-logo/icon-2.svg" alt="Instagram" />
-            </a>
-            <a href="#" className="soc-link">
+            </Link>
+            <Link href="#" className="soc-link">
               <img src="/images/Footer/icons-logo/icon-3.svg" alt="X" />
-            </a>
-            <a href="#" className="soc-link">
+            </Link>
+            <Link href="#" className="soc-link">
               <img src="/images/Footer/icons-logo/icon-4.svg" alt="LinkedIn" />
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="footer-col">
           <h3 className="footer-heading">Company</h3>
           <ul className="footer-links">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Webinars</a></li>
-            <li><a href="#">eBooks</a></li>
-            <li><a href="#">Data sheets</a></li>
+            <li><Link href="#">About us</Link></li>
+            <li><Link href="#">Career</Link></li>
+            <li><Link href="#">Blog</Link></li>
+            <li><Link href="#">Webinars</Link></li>
+            <li><Link href="#">eBooks</Link></li>
+            <li><Link href="#">Data sheets</Link></li>
           </ul>
         </div>
 
@@ -57,12 +58,12 @@ export default function Footer() {
         <div className="footer-col">
           <h3 className="footer-heading">Services</h3>
           <ul className="footer-links">
-            <li><a href="#">CyberShield Solutions</a></li>
-            <li><a href="#">Governance, Risk & Compliance (GRC)</a></li>
-            <li><a href="#">Offensive Security</a></li>
-            <li><a href="#">Security Awareness & Training</a></li>
-            <li><a href="#">Managed Cybersecurity as a Service (MCaaS)</a></li>
-            <li><a href="#">Training and Certifications</a></li>
+            <li><Link href="#">CyberShield Solutions</Link></li>
+            <li><Link href="#">Governance, Risk & Compliance (GRC)</Link></li>
+            <li><Link href="#">Offensive Security</Link></li>
+            <li><Link href="#">Security Awareness & Training</Link></li>
+            <li><Link href="#">Managed Cybersecurity as a Service (MCaaS)</Link></li>
+            <li><Link href="#">Training and Certifications</Link></li>
           </ul>
         </div>
 
@@ -110,9 +111,9 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>© 2025 Cybervol. All rights reserved.</p>
         <div className="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
+          <Link href="#">Privacy Policy</Link>
           <span className="separator">|</span>
-          <a href="#">Terms & conditions</a>
+          <Link href="#">Terms & conditions</Link>
         </div>
       </div>
 

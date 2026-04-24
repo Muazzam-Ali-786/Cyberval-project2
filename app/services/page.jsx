@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import './services.css';
 
 export default function ServicesPage() {
@@ -15,7 +16,8 @@ export default function ServicesPage() {
       desc: "Building Secure & Resilient IT Infrastructures",
       image: "/images/pages/services/card-image-1.png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
-      hoverIcon: "/images/pages/services/icon-white (1).svg"
+      hoverIcon: "/images/pages/services/icon-white (1).svg",
+      link: "/services/service-1"
     },
     {
       id: 2,
@@ -23,7 +25,8 @@ export default function ServicesPage() {
       desc: "Aligning Cybersecurity with Business Risk and Regulatory Assurance",
       image: "/images/pages/services/card-image-2.png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
-      hoverIcon: "/images/pages/services/icon-white (1).svg"
+      hoverIcon: "/images/pages/services/icon-white (1).svg",
+      link: "/services/service-2"
     },
     {
       id: 3,
@@ -31,7 +34,8 @@ export default function ServicesPage() {
       desc: "Proactive Threat Simulation & Risk Mitigation",
       image: "/images/pages/services/card-image-3.png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
-      hoverIcon: "/images/pages/services/icon-white (1).svg"
+      hoverIcon: "/images/pages/services/icon-white (1).svg",
+      link: "/services/service-3"
     },
     {
       id: 4,
@@ -39,7 +43,8 @@ export default function ServicesPage() {
       desc: "Empower Your People, Strengthen Your First Defense",
       image: "/images/pages/services/card-image-4 .png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
-      hoverIcon: "/images/pages/services/icon-white (1).svg"
+      hoverIcon: "/images/pages/services/icon-white (1).svg",
+      link: "/services/service-4"
     },
     {
       id: 5,
@@ -47,7 +52,8 @@ export default function ServicesPage() {
       desc:"Cybersecurity, Al & Digital Transformation, Resilience, GRC, and Privacy",
       image: "/images/pages/services/card-image-5.png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
-      hoverIcon: "/images/pages/services/icon-white (1).svg"
+      hoverIcon: "/images/pages/services/icon-white (1).svg",
+      link: "/services/service-5"
     },
     {
       id: 6,
@@ -55,7 +61,8 @@ export default function ServicesPage() {
       desc: "Your Unyielding Cybersecurity Ally in the Digital Realm",
       image: "/images/pages/services/card-image-6.png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
-      hoverIcon: "/images/pages/services/icon-white (1).svg"
+      hoverIcon: "/images/pages/services/icon-white (1).svg",
+      link: "/services/service-6"
     }
   ];
 
@@ -157,13 +164,15 @@ export default function ServicesPage() {
                     <div className="card-line"></div>
                     <p className="card-text">{card.desc}</p>
                     
-                    <button className="card-btn" aria-label={`Learn more about ${card.title}`}>
-                      <img 
-                        src={hoveredIndex === index ? card.hoverIcon : card.defaultIcon} 
-                        alt="Arrow Icon" 
-                        className="card-btn-icon"
-                      />
-                    </button>
+                    <Link href={card.link}>
+                      <button className="card-btn" aria-label={`Learn more about ${card.title}`}>
+                        <img 
+                          src={hoveredIndex === index ? card.hoverIcon : card.defaultIcon} 
+                          alt="Arrow Icon" 
+                          className="card-btn-icon"
+                        />
+                      </button>
+                    </Link>
                   </div>
                 </div>
               ))}

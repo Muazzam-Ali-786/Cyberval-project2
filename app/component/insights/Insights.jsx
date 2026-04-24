@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import './Insights.css';
 
 const insightsData = [
@@ -126,10 +127,10 @@ export default function Insights() {
                   <div className="insight-content">
                     <span className="insight-date">{item.date}</span>
                     <h3 className="insight-card-title">{item.title}</h3>
-                    <a href={item.link} className="read-more-link">
+                    <Link href={item.link} className="read-more-link">
                       Read More
                       <img src="/images/pages/news-insights/icon.svg" alt="Arrow" className="read-more-icon" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

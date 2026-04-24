@@ -1,7 +1,7 @@
 import { Outfit, Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import  Header from "./component/header/header.jsx"
-import Footer from "./component/footer/footer.jsx"
+import FooterWrapper from "./component/footer/FooterWrapper.jsx"
 
 const outfit = Outfit({ subsets: ["latin"] });
 const manrope = Manrope({ 
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <div className="global-wrapper">
           <Header />
           {children}
-          <Footer />
+          <FooterWrapper />
         </div>
       </body>
     </html>
