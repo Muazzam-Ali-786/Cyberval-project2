@@ -1,6 +1,5 @@
 "use client";
 
-    {
 const capabilityCards = [
   {
     id: "network",
