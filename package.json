@@ -13,8 +13,7 @@
     "next": "16.2.4",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "sora": "^0.0.2",
-    "tailwind": "^4.0.0"
+    "sora": "^0.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.5.0",
