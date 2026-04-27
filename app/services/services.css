@@ -22,7 +22,7 @@
 .services-container {
   width: 100%;
   margin: 0;
-  padding-left: 102px;
+  padding: 0 102px;
   position: relative;
   z-index: 2;
 }
@@ -53,7 +53,6 @@
   margin-bottom: 60px;
   gap: 40px;
   max-width: 1400px; /* Header stays in bounds */
-  padding-right: 40px;
 }
 
 .services-header-left {
@@ -112,7 +111,7 @@
 
 .services-description {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   color: #585858;
   line-height: 30px;

@@ -37,7 +37,7 @@ export default function AboutPage() {
               <h2 className="mission-heading">Our Mission</h2>
               <h3 className="mission-subheading">Fortifying Excellence through Advanced Cybersecurity Solutions</h3>
               <p className="mission-description">
-                At the core of our mission is a dedication to empowering organizations with 
+                At the crux of our mission is a dedication to empowering organizations with 
                 transformative solutions, enhancing performance, optimizing operations, and 
                 fortifying the security of their digital assets.
               </p>

@@ -17,10 +17,8 @@ export default function Nav() {
     };
 
     const toggleDropdown = (e, name) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            setActiveDropdown(activeDropdown === name ? null : name);
-        }
+        e.preventDefault();
+        setActiveDropdown(activeDropdown === name ? null : name);
     };
 
     const isActive = (path) => pathname === path;
@@ -29,11 +27,7 @@ export default function Nav() {
         <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''}`}>
             <div className="nav-container">
                 <div className="logo">
-                    <img src="/images/header-items/header-logo.svg" alt="Cybervol" />
-                    <div className="logo-text">
-                        <span className="brand-name">Cybervol</span>
-                        <span className="tagline">by Rotvol Solutions</span>
-                    </div>
+                    <img src="/cybervol-logo.svg" alt="Cybervol" />
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>

@@ -316,13 +316,16 @@
     .home-hero-content {
         align-items: flex-start; /* Align content to the left */
         gap: 28px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .home-hero-pill {
         display: flex;
-        width: 337px !important;
-        height: 38px !important;
-        padding: 8.12px !important;
+        width: auto !important;
+        max-width: 100%;
+        height: auto !important;
+        padding: 8px 16px !important;
         justify-content: center;
         align-items: center;
         gap: 8.12px;
@@ -336,14 +339,16 @@
         letter-spacing: 1.08px !important;
         color: #ffffff !important;
         text-transform: uppercase;
-        white-space: nowrap;
+        white-space: normal;
+        text-align: center;
     }
 
     .home-hero-title {
         font-family: var(--font-sora), sans-serif;
-        font-size: 32px !important;
-        line-height: 48px !important;
-        width: 333px !important;
+        font-size: 28px !important; /* Slightly smaller for 425px */
+        line-height: 40px !important;
+        width: 100% !important;
+        max-width: 100%;
         height: auto;
         font-weight: 600 !important;
         letter-spacing: -0.02em;
@@ -397,8 +402,9 @@
     }
 
     .home-hero-image {
-        width: 460px !important;
-        height: 460px !important;
+        width: 100% !important;
+        max-width: 460px !important;
+        height: auto !important;
         aspect-ratio: 1/1;
         margin-top: 20px !important;
         position: relative;
