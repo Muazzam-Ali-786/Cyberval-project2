@@ -4,29 +4,28 @@ export default function ServiceFourPage() {
   return (
     <div className="w-full min-h-screen bg-[#ffffff]">
       {/* Hero Section */}
-      <section className="relative mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-4/her-bg-mobile.svg')] bg-cover bg-top bg-no-repeat opacity-100 p-[120px_20px_60px] text-center w-full min-[1025px]:w-[1454px] min-[1025px]:h-[556px] h-[631px] min-[1025px]:left-[-3px] min-[1025px]:bg-[url('/images/pages/services/service-4/hero-bg.svg')] max-[1454px]:max-w-full">
-        <div className="flex flex-col items-center z-[5] opacity-100 w-full max-w-[350px] min-[1025px]:absolute min-[1025px]:top-[184px] min-[1025px]:left-[-3px] min-[1025px]:w-[1454px] min-[1025px]:h-[556px] max-[1024px]:relative max-[1024px]:mx-auto">
-          <div className="flex justify-center items-center w-[128px] h-[38px] gap-[8.12px] rounded-[27.61px] p-[8.12px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] opacity-100 mb-[20px]">
-            <span className="flex justify-center items-center w-[75px] h-[37px] opacity-100 font-manrope font-semibold text-[14px] leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none">SERVICES</span>
+      <section className="relative w-full min-h-[631px] min-[1025px]:h-[556px] min-[1025px]:w-[1454px] mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-4/hero-bg.svg')] max-[1024px]:bg-[url('/images/pages/services/service-4/her-bg-mobile.svg')] bg-cover bg-top bg-no-repeat opacity-100 p-[120px_20px_60px] text-center max-[1454px]:w-full">
+        <div className="relative w-full max-w-[850px] flex flex-col items-center gap-[21px] text-center z-[5] px-[20px] mx-auto">
+          <div className="flex justify-center items-center w-auto max-w-[90%] min-h-[38px] gap-[8.12px] rounded-[27.61px] p-[8px_16px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] m-0">
+            <span className="opacity-100 font-manrope font-semibold text-[12px] sm:text-[14px] leading-[1.5] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none text-center">SERVICES</span>
           </div>
 
-          <h1 className="font-sora font-semibold text-[#FFFFFF] opacity-100 text-center [text-wrap:balance] mx-auto w-full h-auto text-[24px] leading-[43px] min-[1025px]:w-[795px] min-[1025px]:h-[57px] min-[1025px]:text-[40px] min-[1025px]:leading-[57px] m-[21px_0]">
+          <h1 className="font-sora text-[32px] sm:text-[40px] font-semibold text-[#ffffff] w-full max-w-[800px] opacity-100 leading-[1.3] text-center [text-wrap:balance] mx-auto m-0">
             Awareness & Training
           </h1>
 
-          <p className="font-manrope font-normal text-[#EEEEEE] opacity-100 text-center mx-auto min-[1025px]:w-[669px] min-[1025px]:h-[90px] min-[1025px]:text-[18px] min-[1025px]:leading-[30px] max-[1454px]:w-full max-[1454px]:h-auto max-[768px]:text-[16px] m-0">
+          <p className="font-manrope font-normal text-[16px] sm:text-[18px] leading-[1.6] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0">
             At Cybervol, effective cybersecurity starts with informed people. Our Security Awareness & Training service equips your workforce with the knowledge and vigilance needed to recognize and respond to cyber threats.
           </p>
         </div>
       </section>
-      <section className="w-full bg-[#ffffff] p-[60px_20px_80px] text-[#111827]" aria-labelledby="s4-defense-heading">
+      <section className="w-full bg-[#ffffff] p-[120px_20px] text-[#111827]" aria-labelledby="s4-defense-heading">
         <div className="max-w-[1230px] mx-auto">
-          <header className="flex justify-between items-start gap-[40px] mb-[48px] max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:text-left max-[1024px]:gap-[20px]">
-            <h2 id="s4-defense-heading" className="m-0 font-sora font-semibold text-[#212121] min-[1025px]:w-[412px] min-[1025px]:h-[100px] min-[1025px]:text-[32px] min-[1025px]:leading-[50px] text-[24px] leading-[36px]">
-              Strengthening Your First Line <br /> of{" "}
-              <span className="text-[#2E5A88]">Defense</span>
+          <header className="flex flex-col min-[1025px]:flex-row justify-between items-start min-[1025px]:items-center gap-[40px] mb-[80px]">
+            <h2 id="s4-defense-heading" className="m-0 font-sora font-bold text-[#212121] text-[32px] sm:text-[40px] leading-[1.3] text-left">
+              Strengthening Your First Line <br /> of <span className="text-[#2E5A88]">Defense</span>
             </h2>
-            <p className="m-0 text-right font-manrope font-normal text-[#585858] min-[1025px]:w-[587px] min-[1025px]:h-[58px] min-[1025px]:text-[16px] min-[1025px]:leading-[30px] text-[14px] leading-[24px] max-[1024px]:text-left">
+            <p className="m-0 font-manrope font-normal text-[#585858] text-[16px] sm:text-[18px] leading-[1.6] max-w-[600px] min-[1025px]:text-right text-left">
               Empowering Your Workforce with Essential Practical Skills to Effectively Detect, Prevent, and Respond to a Wide Range of Cyber Threats.
             </p>
           </header>
