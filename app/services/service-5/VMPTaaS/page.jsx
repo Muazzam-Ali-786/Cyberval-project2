@@ -24,14 +24,14 @@ export default function VMPTaaSPage() {
 
       {/* Why Choose Section */}
       <section className="p-[120px_20px] bg-[#ffffff]">
-        <div className="max-w-[1230px] mx-auto text-center">
+        <div className="max-w-[1300px] mx-auto text-center">
           <h2 className="font-sora text-[40px] font-bold text-[#212121] mb-[80px] max-[768px]:text-[32px]">
             Why Choose <span className="text-[#2E5A88]">VMPTaaS</span>
           </h2>
           
-          <div className="flex flex-row items-center justify-center gap-[40px] max-[1024px]:flex-col relative">
+          <div className="flex flex-row items-stretch justify-between gap-[10px] max-[1024px]:gap-[40px] max-[1024px]:flex-col relative">
             {/* Left Column */}
-            <div className="flex flex-col gap-[30px] flex-1 max-w-[380px] w-full max-[1024px]:order-1">
+            <div className="flex flex-col justify-between gap-[30px] flex-1 max-w-[350px] w-full max-[1024px]:order-1">
               {/* Feature 1 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px]">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
@@ -55,14 +55,14 @@ export default function VMPTaaSPage() {
             </div>
 
             {/* Center Image */}
-            <div className="relative flex justify-center items-center w-full max-w-[404px] h-auto mx-auto min-[1280px]:h-full max-[1024px]:order-2">
-              <picture className="w-[404px] h-[524px] max-[1024px]:w-full max-[1024px]:h-auto rounded-[20px] overflow-hidden">
-                <img src="/images/pages/services/service-5/(VMPTaaS)/center-image.svg" alt="VMPTaaS Dashboard" className="w-full h-full object-cover rounded-[20px]" />
+            <div className="relative flex justify-center items-center w-full max-w-[580px] h-auto mx-auto min-[1280px]:h-[515px] max-[1024px]:order-2">
+              <picture className="w-full min-[1025px]:w-[580px] h-full flex justify-center items-center">
+                <img src="/images/pages/services/service-5/(VMPTaaS)/center-image.svg" alt="VMPTaaS Dashboard" className="w-full h-full object-contain" />
               </picture>
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-[30px] flex-1 max-w-[380px] w-full max-[1024px]:order-3">
+            <div className="flex flex-col justify-between gap-[15px] flex-1 max-w-[350px] w-full max-[1024px]:order-3">
               {/* Feature 3 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px]">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
