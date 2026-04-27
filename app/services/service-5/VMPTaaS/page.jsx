@@ -31,7 +31,7 @@ export default function VMPTaaSPage() {
           
           <div className="flex flex-row items-center justify-center gap-[40px] max-[1024px]:flex-col relative">
             {/* Left Column */}
-            <div className="flex flex-col gap-[30px] flex-1 max-w-[380px] w-full">
+            <div className="flex flex-col gap-[30px] flex-1 max-w-[380px] w-full max-[1024px]:order-1">
               {/* Feature 1 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px]">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
@@ -62,7 +62,7 @@ export default function VMPTaaSPage() {
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col gap-[30px] flex-1 max-w-[380px] w-full">
+            <div className="flex flex-col gap-[30px] flex-1 max-w-[380px] w-full max-[1024px]:order-3">
               {/* Feature 3 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px]">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
