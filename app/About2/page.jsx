@@ -151,7 +151,7 @@ export default function About() {
             </div>
 
             {/* Card 2: Precision */}
-            <div className="offer-card card-precision">
+            <div className="offer-card card-precision ">
               <h3 className="card-title">We Build with Precision</h3>
               <p className="card-description">
                 From architecture to implementation, we combine proven methodologies with automation to reduce gaps and human error.
