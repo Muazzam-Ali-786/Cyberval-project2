@@ -619,9 +619,8 @@
     .offer-cards-grid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        gap: 40px;
+        gap: 10px;
     }
-    
     .offer-header, .card-needs, .card-precision, .card-excellence {
         grid-column: 1 !important;
         grid-row: auto !important;
@@ -649,6 +648,16 @@
         font-size: 28px;
     }
     
+    .offer-card .card-needs {
+        min-height: auto;
+        height: auto;
+        padding: 40px 30px;
+    }
+    .offer-card {
+        min-height: auto;
+        height: auto;
+        padding: 40px 30px;
+    }
     .offer-card {
         min-height: auto;
         height: auto;
