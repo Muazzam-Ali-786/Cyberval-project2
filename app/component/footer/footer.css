@@ -6,12 +6,8 @@
 .footer-main-wrapper {
     width: 100%;
     height: fit-content;
-    padding: 160px 40px 120px; /* Increased from 120px to match banner shift */
+    padding: 160px 40px 120px;
     background-color: #ebf0f5; 
-    background-image: url('/footerbg.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
 }
@@ -313,6 +309,8 @@
 @media (max-width: 1024px) {
     .footer-main-wrapper {
         padding: 120px 20px 40px;
+        background-image: none !important;
+        background-color: #ebf0f5;
     }
 
     .footer-content {
@@ -376,33 +374,6 @@
         padding: 15px 0 25px;
     }
 
-    .footer-watermark-img,
-    .footer-watermark {
-        display: none !important;
-    }
-
-    .footer-large-branding {
-        display: none !important;
-    }
-
-    .footer-small-branding {
-        width: 100%;
-        text-align: center;
-        padding: 20px 0 10px;
-        display: block;
-    }
-
-    .small-branding-text {
-        font-family: var(--font-sora), sans-serif;
-        font-size: 64px;
-        font-weight: 700;
-        color: rgba(0, 15, 46, 0.05); /* Exact match to desktop color */
-        margin: 0;
-        letter-spacing: -2px;
-        text-transform: capitalize;
-        opacity: 1; /* Match large branding visibility */
-    }
-
     .footer-bottom {
         padding: 30px 0;
         flex-direction: column;
@@ -426,31 +397,6 @@
         max-width: 220px;
         margin: 0 auto 15px auto;
         line-height: 1.4;
-    }
-}
-
-/* Desktop Only Branding */
-@media (min-width: 1025px) {
-    .footer-small-branding {
-        display: none;
-    }
-
-    .footer-large-branding {
-        width: 100%;
-        text-align: center;
-        padding: 100px 0 40px;
-        display: block;
-    }
-
-    .branding-text {
-        font-family: var(--font-sora), sans-serif;
-        font-size: 180px;
-        font-weight: 700;
-        color: rgba(0, 15, 46, 0.05);
-        margin: 0;
-        letter-spacing: -5px;
-        text-transform: capitalize;
-        line-height: 1;
     }
 }
 

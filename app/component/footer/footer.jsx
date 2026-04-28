@@ -171,12 +171,18 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="footer-branding-wrapper">
-            <div className="footer-large-branding">
-              <h2 className="branding-text">Cybervol</h2>
+          <div className="w-full">
+            {/* Large Branding (Desktop Only) */}
+            <div className="!hidden lg:!block w-full text-center pt-[100px] pb-[40px]">
+              <h2 className="font-sora text-[180px] font-bold text-[#000F2E] opacity-[0.05] m-0 tracking-[-5px] capitalize leading-none select-none">
+                Cybervol
+              </h2>
             </div>
-            <div className="footer-small-branding">
-              <h2 className="small-branding-text">Cybervol</h2>
+            {/* Small Branding (Mobile/Tablet Only) */}
+            <div className="!block lg:!hidden w-full text-center pt-[40px] pb-[20px]">
+              <h2 className="font-sora text-[48px] md:text-[64px] font-bold text-[#000F2E] opacity-[0.05] m-0 tracking-[-2px] capitalize leading-none select-none">
+                Cybervol
+              </h2>
             </div>
           </div>
         </div>
