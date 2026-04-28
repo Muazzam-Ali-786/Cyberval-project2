@@ -122,22 +122,21 @@
     max-width: 100%;
     align-items: center;
   }
+  .elite-title {
+    font-size: 28px;
+    text-align: center;
+  }
   .elite-description {
     margin: 0 auto 40px auto;
+    font-size: 14px;
+    text-align: center;
   }
   .elite-right {
     flex: 1;
     justify-content: center;
+    width: 100%;
   }
-}
 
-@media (max-width: 768px) {
-  .elite-section { padding: 80px 30px; }
-  .elite-title { font-size: 28px; }
-  .elite-description { font-size: 14px; }
-}
-
-@media (max-width: 480px) {
   .features-svg {
     display: none;
   }

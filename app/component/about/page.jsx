@@ -8,10 +8,8 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="about-hero-container">
           <div className="about-hero-left">
-            <span className="about-badge">ABOUT US</span>
-            
-            {/* Using exact SVG from Figma */}
             <div className="radar-wrapper">
+              <span className="about-badge">ABOUT US</span>
               <img 
                 src="/images/radar-graphic.svg" 
                 alt="Security Radar" 
@@ -32,7 +30,7 @@ export default function AboutPage() {
               cutting-edge cybersecurity solutions with a forward-thinking mindset. Trust us 
               to safeguard your digital assets while propelling your technological resilience.
             </p>
-            
+
             <div className="mission-block">
               <h2 className="mission-heading">Our Mission</h2>
               <h3 className="mission-subheading">Fortifying Excellence through Advanced Cybersecurity Solutions</h3>
@@ -43,7 +41,7 @@ export default function AboutPage() {
               </p>
             </div>
             
-            <Link href="/about"><button className="btn-read-more">Read More</button></Link>
+            <Link href="/About2"><button className="btn-read-more">Read More</button></Link>
           </div>
         </div>
       </section>
@@ -73,44 +71,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Commitment Section */}
+      {/* Commitment Section (Previously What We Offer) */}
       <section className="commitment-section">
-        <span className="commitment-label">OUR COMMITMENT</span>
+        <span className="commitment-label">WHAT WE OFFER</span>
         <h2 className="commitment-heading">
-          Built on Trust. Driven by <span className="blue-text">Security.</span>
+          Our <span className="blue-text">Commitment</span>
         </h2>
         <p className="commitment-subtext">
-          Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.
+          We evaluate your environment, design the right mix of services, and execute with accuracy.
         </p>
         
         <div className="commitment-cards-container">
           <div className="commitment-card">
             <div className="card-icon-wrapper">
-              <img src="/group1.svg" alt="Security First" />
+              <img src="/group1.svg" alt="Needs" />
             </div>
             <div className="card-content">
-              <h4 className="card-title">Security First</h4>
-              <p className="card-desc">Ensuring unwavering security at every level for robust digital asset protection.</p>
+              <h4 className="card-title">We Understand Your Needs</h4>
+              <p className="card-desc">We take time to understand your environment, risk profile, and business goals.</p>
             </div>
           </div>
 
           <div className="commitment-card">
             <div className="card-icon-wrapper">
-              <img src="/group2.svg" alt="Client Confidentiality" />
+              <img src="/group2.svg" alt="Precision" />
             </div>
             <div className="card-content">
-              <h4 className="card-title">Client Confidentiality</h4>
-              <p className="card-desc">Upholding strict confidentiality standards for trusted cybersecurity services.</p>
+              <h4 className="card-title">We Build with Precision</h4>
+              <p className="card-desc">We combine proven methodologies with automation to reduce gaps and human error.</p>
             </div>
           </div>
 
           <div className="commitment-card">
             <div className="card-icon-wrapper">
-              <img src="/group3.svg" alt="Continuous Innovation" />
+              <img src="/group3.svg" alt="Excellence" />
             </div>
             <div className="card-content">
-              <h4 className="card-title">Continuous Innovation</h4>
-              <p className="card-desc">Staying ahead with cutting-edge solutions to adapt and counter evolving threats.</p>
+              <h4 className="card-title">We Deliver Excellence</h4>
+              <p className="card-desc">We stay engaged after go-live—measuring outcomes and helping teams mature.</p>
             </div>
           </div>
         </div>

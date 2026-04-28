@@ -1,7 +1,7 @@
 .nav {
     width: 100%;
     padding: 20px 0;
-    z-index: 1000;
+    z-index: 9999;
     position: absolute;
     top: 0;
     left: 0;
@@ -422,7 +422,7 @@ html {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 10000;
 }
 
 .hamburger span {
@@ -433,17 +433,7 @@ html {
     transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-    /* Animation removed */
-}
 
-.hamburger.active span:nth-child(2) {
-    /* Animation removed */
-}
-
-.hamburger.active span:nth-child(3) {
-    /* Animation removed */
-}
 
 /* Fluid Laptop Responsiveness (1026px - 1440px) */
 @media (min-width: 1026px) and (max-width: 1439px) {

@@ -10,42 +10,42 @@ const insightsData = [
     date: "Jan 10, 2024",
     title: "Top Cybersecurity Trends Every Business Should Know in 2024",
     image: "/images/pages/news-insights/image-1.jpg",
-    link: "#"
+    link: "/resources/Blog/1"
   },
   {
     id: 2,
     date: "Jan 10, 2024",
     title: "Top Cybersecurity Trends Every Business Should Know in 2024",
     image: "/images/pages/news-insights/image-2.jpg",
-    link: "#"
+    link: "/resources/Blog/2"
   },
   {
     id: 3,
     date: "Jan 10, 2024",
     title: "The Future of Cloud Security: Best Practices for Organizations",
     image: "/images/pages/news-insights/image 3.jpg",
-    link: "#"
+    link: "/resources/Blog/3"
   },
   {
     id: 4,
     date: "Feb 05, 2024",
     title: "Protecting Your Assets: A Guide to Modern Data Encryption",
     image: "/images/pages/news-insights/image-1.jpg",
-    link: "#"
+    link: "/resources/Blog/4"
   },
   {
     id: 5,
     date: "Feb 12, 2024",
     title: "Zero Trust Architecture: Why Your Network Needs a New Approach",
     image: "/images/pages/news-insights/image-2.jpg",
-    link: "#"
+    link: "/resources/Blog/5"
   },
   {
     id: 6,
     date: "Mar 01, 2024",
     title: "The Role of AI in Proactive Threat Detection and Response",
     image: "/images/pages/news-insights/image 3.jpg",
-    link: "#"
+    link: "/resources/Blog/6"
   }
 ];
 
@@ -108,7 +108,7 @@ export default function Insights() {
             </h2>
           </div>
           <div className="insights-header-right">
-            <button className="view-all-btn">View all news</button>
+           <Link href="/resources/Blog"><button className="view-all-btn">View all news</button></Link> 
           </div>
         </div>
 
