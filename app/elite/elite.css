@@ -51,7 +51,7 @@
 
 .elite-title {
   font-family: var(--font-sora), sans-serif;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 600;
   color: #ffffff;
   line-height: 1.3;
@@ -65,11 +65,15 @@
 
 .elite-description {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   color: #a3aeb8;
   line-height: 1.7;
   margin: 0 0 45px 0;
   max-width: 480px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .elite-logo-wrapper {

@@ -30,6 +30,7 @@ export default function Nav() {
     };
 
     const toggleDropdown = (e, name) => {
+        e.preventDefault();
         setActiveDropdown(activeDropdown === name ? null : name);
     };
 

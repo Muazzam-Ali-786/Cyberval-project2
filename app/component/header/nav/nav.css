@@ -45,8 +45,8 @@ html {
 }
 
 .logo img {
-    height: 35px;
-    width: auto;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 
@@ -197,13 +197,14 @@ html {
         display: flex;
     }
 }
-
 .mega-menu {
-    display: none;
+    display: flex; /* Always flex but hidden via opacity */
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: calc(100% + 20px);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(10px);
     background: #ffffff;
     border: 1px solid #cdcdcd;
     border-radius: 16px;
@@ -215,7 +216,17 @@ html {
     flex-direction: row;
     overflow: hidden;
     gap: 0;
+    transition: all 2s ease; /* 2-second animation as requested */
 }
+
+.dropdown:hover .mega-menu,
+.dropdown:focus-within .mega-menu,
+.dropdown.active .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
 .mega-left {
     flex: 1.6;
     display: flex;
@@ -241,7 +252,7 @@ html {
 
 .mega-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 12px;
     cursor: pointer;
 }
